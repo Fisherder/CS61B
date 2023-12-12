@@ -14,6 +14,9 @@ public class LeapYear {
         }
     }
 
+    /** Determines whether a year is a leap year and return a boolean value
+     *  @param  year to be analyzed
+     */
     private static boolean isLeapYear(int year) {
         if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
             return true;
