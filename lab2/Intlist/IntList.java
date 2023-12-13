@@ -109,8 +109,28 @@ public class IntList {
         return res;
     }
 
+    /**
+     * Returns a list consisting of the elements of A followed by the
+     * * elements of B.  May modify items of A. (Recursive)
+     */
+    public static IntList dcatenateRecursive(IntList A, IntList B) {
+        if (A == null) {
+            return B;
+        }
+        A.rest = dcatenateRecursive(A.rest, B);
+        return A;
+    }
 
-
+    /**
+     * Returns a list consisting of the elements of A followed by the
+     * * elements of B.  May NOT modify items of A. (Recursive)
+     */
+    public static IntList catenateRecursive(IntList A, IntList B) {
+        if (A == null) {
+            return B;
+        }
+        return new IntList(A.first, catenateRecursive(A.rest, B));
+    }
 
 
 
